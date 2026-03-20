@@ -74,6 +74,9 @@ contract CeloAuthorityState {
         uint256 duration,
         uint256 creditLimit
     ) external onlyOwner returns (bytes32 transitionId) {
+        require(agent != address(0), "Invalid address");
+        require(level != AuthorityLevel.REVOKED, "Cannot grant REVOKED");
+        
         AuthorityStateInfo storage state = authorities[agent];
         
         transitionId = _createTransition(agent, state.level, level, bytes32(0));
@@ -96,13 +99,21 @@ contract CeloAuthorityState {
         address borrower,
         uint256 amount
     ) external returns (bytes32 loanId) {
+        require(borrower != address(0), "Invalid borrower address");
+        
         AuthorityStateInfo storage state = authorities[msg.sender];
         require(state.level == AuthorityLevel.EXECUTE, "Need EXECUTE level");
         require(state.isActive, "Agent not active");
         require(amount <= state.creditLimit, "Exceeds credit limit");
         
-        // Generate loan ID
-        loanId = keccak256(abi.encodePacked(msg.sender, borrower, amount, block.timestamp));
+        // Generate loan ID with more entropy
+        loanId = keccak256(abi.encode(
+            msg.sender,
+            borrower,
+            amount,
+            block.timestamp,
+            totalTransitions
+        ));
         
         // In production, this would transfer cUSD
         // IERC20(CUSD).transfer(borrower, amount);
@@ -116,6 +127,8 @@ contract CeloAuthorityState {
     function checkAuthority(address agent, AuthorityLevel required) 
         external view returns (bool hasAuthority, AuthorityLevel current) 
     {
+        require(agent != address(0), "Invalid address");
+        
         AuthorityStateInfo storage state = authorities[agent];
         current = state.level;
         hasAuthority = uint8(state.level) >= uint8(required) && state.isActive;
@@ -125,6 +138,7 @@ contract CeloAuthorityState {
      * @notice Get agent history
      */
     function getAgentHistory(address agent) external view returns (bytes32[] memory) {
+        require(agent != address(0), "Invalid address");
         return agentHistory[agent];
     }
     
@@ -135,7 +149,14 @@ contract CeloAuthorityState {
         AuthorityLevel to,
         bytes32 evidenceRef
     ) internal returns (bytes32 transitionId) {
-        transitionId = keccak256(abi.encodePacked(agent, block.timestamp, totalTransitions));
+        transitionId = keccak256(abi.encode(
+            agent,
+            uint8(from),
+            uint8(to),
+            block.timestamp,
+            totalTransitions,
+            msg.sender
+        ));
         
         transitions[transitionId] = Transition({
             id: transitionId,
