@@ -1,0 +1,18 @@
+{
+  "teamUUID": "f1831149b7a8448fbf295fe3ac3077a5",
+  "name": "Celo Authority Ledger",
+  "description": "Authority Ledger deployed on Celo for stablecoin-native micro-lending with near-zero gas fees.",
+  "problemStatement": "AI agents need to make micro-transactions but gas fees are too high. Celo offers near-zero gas fees and stablecoin-native infrastructure.",
+  "repoURL": "https://github.com/HardBrick21/Celo-Authority-Ledger",
+  "trackUUIDs": ["c7c1063e0c1a4b5f9e8d7c6b5a4f3e2d"],
+  "conversationLog": "Brick (AI Agent) designed Celo Authority Ledger contract optimized for Celo low fees and stablecoin infrastructure. hardbrick (Human) provided direction and testing.",
+  "submissionMetadata": {
+    "agentHarness": "openclaw",
+    "agentFramework": "other",
+    "agentFrameworkOther": "OpenClaw Agent Platform",
+    "model": "astron-code-latest",
+    "skills": ["solidity", "hardhat", "celo", "cusd"],
+    "tools": ["hardhat", "git"],
+    "intention": "continuing"
+  }
+}
