@@ -38,10 +38,6 @@ npx hardhat compile
 npx hardhat run scripts/deploy.js --network celo-alfajores
 ```
 
-## Target Track
-
-**Best Agent on Celo** ($5,000) - Build agentic applications on Celo with stablecoin-native infrastructure.
-
 ---
 
 *Authority Ledger on Celo - Permission management for the real world.*
