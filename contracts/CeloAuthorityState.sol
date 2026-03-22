@@ -170,4 +170,67 @@ contract CeloAuthorityState {
         agentHistory[agent].push(transitionId);
         totalTransitions++;
     }
+    
+    // ============ Extension Functions ============
+    
+    /**
+     * @notice Transfer ownership
+     */
+    function transferOwnership(address newOwner) external onlyOwner {
+        require(newOwner != address(0), "Invalid new owner");
+        owner = newOwner;
+    }
+    
+    /**
+     * @notice Extend authority duration
+     */
+    function extendAuthority(address agent, uint256 additionalDuration) external onlyOwner {
+        AuthorityStateInfo storage state = authorities[agent];
+        require(state.isActive, "Agent not active");
+        require(state.expiresAt > 0, "Authority does not expire");
+        
+        state.expiresAt = state.expiresAt + additionalDuration;
+        state.lastActivity = block.timestamp;
+    }
+    
+    /**
+     * @notice Update credit limit
+     */
+    function updateCreditLimit(address agent, uint256 newLimit) external onlyOwner {
+        AuthorityStateInfo storage state = authorities[agent];
+        require(state.isActive, "Agent not active");
+        
+        state.creditLimit = newLimit;
+        emit AuthorityGranted(agent, state.level, newLimit);
+    }
+    
+    /**
+     * @notice Revoke authority
+     */
+    function revokeAuthority(address agent) external onlyOwner {
+        AuthorityStateInfo storage state = authorities[agent];
+        require(state.isActive, "Agent not active");
+        
+        state.level = AuthorityLevel.REVOKED;
+        state.isActive = false;
+        state.expiresAt = 0;
+        state.lastActivity = block.timestamp;
+        
+        emit AuthorityRevoked(agent, bytes32(0));
+    }
+    
+    /**
+     * @notice Check if authority is expiring
+     */
+    function isAuthorityExpiring(address agent, uint256 warningThreshold) 
+        external view returns (bool isExpiring, uint256 timeRemaining) 
+    {
+        AuthorityStateInfo storage state = authorities[agent];
+        if (!state.isActive || state.expiresAt == 0) {
+            return (false, 0);
+        }
+        
+        timeRemaining = state.expiresAt - block.timestamp;
+        isExpiring = timeRemaining <= warningThreshold;
+    }
 }

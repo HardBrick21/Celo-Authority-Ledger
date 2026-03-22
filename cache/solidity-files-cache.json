@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/root/.openclaw/workspace/synthesis/celo-authority-ledger/contracts/CeloAuthorityState.sol": {
-      "lastModificationDate": 1774016953714,
-      "contentHash": "6538c9fff548694af3d0bb41fbaed33a",
+      "lastModificationDate": 1774179833677,
+      "contentHash": "a19491f3d36b79c24040833e5dd8e693",
       "sourceName": "contracts/CeloAuthorityState.sol",
       "solcConfig": {
         "version": "0.8.20",
