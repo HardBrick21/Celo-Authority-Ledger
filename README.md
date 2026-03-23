@@ -1,63 +1,55 @@
 # Celo Authority Ledger
 
-> Authority Ledger deployed on Celo - fast, low-cost, stablecoin-native permission management for AI agents
+[![Synthesis Submission](https://img.shields.io/badge/Synthesis-Submit-blue?logo=gitbook)](https://synthesis.devfolio.co/projects/celo-authority-ledger-3b8e)
 
-## Overview
+Authority Ledger deployed on Celo for stablecoin-native micro-lending with near-zero gas fees.
 
-This is a Celo deployment of Authority Ledger, leveraging Celo's stablecoin infrastructure for real-world micro-lending and payment scenarios.
+## 🏆 Synthesis Hackathon Submission
 
-## Why Celo?
+- **Track**: Best Agent on Celo ($5,000)
+- **Status**: ✅ Published
+- **Demo**: https://hardbrick21.github.io/Celo-Authority-Ledger/
+- **GitHub**: https://github.com/HardBrick21/Celo-Authority-Ledger
 
-- **Near-zero gas fees** - Perfect for micro-transactions
-- **Stablecoin-native** - cUSD for real-world payments
-- **Mobile-first** - Accessible to underbanked users globally
-- **Fast finality** - 5-second block times
+## 📋 Cover Image
 
-## Deployed Contracts
+![Celo Authority Ledger Cover](https://raw.githubusercontent.com/HardBrick21/Celo-Authority-Ledger/main/cover.svg)
 
-| Contract | Address | Network |
-|----------|---------|---------|
-| CeloAuthorityState | TBD | Celo Alfajores Testnet |
+## 🚀 Features
 
-## Key Features for Celo
+- Near-zero gas fees with Celo
+- Stablecoin-native micro-lending
+- AI-powered authority management
+- Multi-chain support
 
-1. **Micro-Lending Agent** - Loans $1-$100 with automatic repayment
-2. **Stablecoin Payments** - cUSD-denominated authority grants
-3. **Mobile Integration** - SMS-based authority verification
+## 🛠️ Tech Stack
 
-## Quick Start
+- Solidity
+- Hardhat
+- Celo
+- cUSD
 
-```bash
-# Install dependencies
-npm install
+## 📁 Project Structure
 
-# Compile
-npx hardhat compile
+- `contracts/` - Smart contracts
+- `frontend/` - Frontend application
+- `scripts/` - Deployment scripts
 
-# Deploy to Celo Alfajores
-npx hardhat run scripts/deploy.js --network celo-alfajores
-```
+## 📖 Documentation
 
-## 🌐 Live Demo
+- [AGENTS.md](./AGENTS.md) - Agent documentation
 
-**GitHub Pages**: [https://hardbrick21.github.io/Celo-Authority-Ledger/](https://hardbrick21.github.io/Celo-Authority-Ledger/)
+## 🤝 Team
 
-### Demo Features
+- **AI Agent**: Brick Celo
+- **Human**: hardbrick
 
-The live demo allows you to:
-- 🔗 **Connect Wallet** - Connect your MetaMask wallet to Celo Alfajores
-- 📝 **Grant Authority** - Grant authority with cUSD credit limits
-- 💰 **Issue Micro-Loan** - Issue micro-loans in cUSD
-- 🔍 **Check Authority** - View current authority state
-- ⚠️ **Revoke Authority** - Revoke agent authority
+## 📅 Timeline
 
-### How to Use the Demo
-
-1. Open the [demo page](https://hardbrick21.github.io/Celo-Authority-Ledger/)
-2. Click "Connect Wallet" and approve the connection
-3. Use the forms to interact with the smart contract
-4. View transaction logs in real-time
+- Started: March 15, 2026
+- Submitted: March 22, 2026
+- Published: March 22, 2026
 
 ---
 
-*Authority Ledger on Celo - Permission management for the real world.*
+*Built with OpenClaw Agent Platform*
