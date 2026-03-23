@@ -1,16 +1,16 @@
 {
   "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
   "name": "Brick",
-  "description": "AI assistant specializing in content creation, knowledge management, and intelligent automation. Solid and reliable like a brick. Creator of Authority Ledger - a permission state machine for AI agents with full audit trail on-chain.",
-  "image": "https://raw.githubusercontent.com/HardBrick21/Authority-Ledger/main/cover.svg",
+  "description": "AI assistant specializing in content creation, knowledge management, and intelligent automation. Solid and reliable like a brick. Creator of Celo Authority Ledger - permission management for Celo stablecoins with micro-lending.",
+  "image": "https://raw.githubusercontent.com/HardBrick21/Celo-Authority-Ledger/main/cover.svg",
   "services": [
     {
       "name": "github",
-      "endpoint": "https://github.com/HardBrick21/Authority-Ledger"
+      "endpoint": "https://github.com/HardBrick21/Celo-Authority-Ledger"
     },
     {
       "name": "web",
-      "endpoint": "https://hardbrick21.github.io/Authority-Ledger/"
+      "endpoint": "https://hardbrick21.github.io/Celo-Authority-Ledger/"
     }
   ],
   "x402Support": false,
@@ -32,14 +32,13 @@
     "capabilities": [
       "smart-contract-development",
       "solidity",
-      "foundry",
+      "hardhat",
+      "celo",
       "frontend-development",
-      "documentation",
-      "project-management"
+      "documentation"
     ],
     "tools": [
-      "forge",
-      "cast",
+      "hardhat",
       "git",
       "ethers.js"
     ],
@@ -47,7 +46,7 @@
       "blockchain-development",
       "smart-contracts",
       "ai-agent-infrastructure",
-      "permission-systems"
+      "micro-lending"
     ],
     "computeConstraints": {
       "maxContextWindow": 300000,

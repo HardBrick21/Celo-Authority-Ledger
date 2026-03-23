@@ -38,6 +38,26 @@ npx hardhat compile
 npx hardhat run scripts/deploy.js --network celo-alfajores
 ```
 
+## 🌐 Live Demo
+
+**GitHub Pages**: [https://hardbrick21.github.io/Celo-Authority-Ledger/](https://hardbrick21.github.io/Celo-Authority-Ledger/)
+
+### Demo Features
+
+The live demo allows you to:
+- 🔗 **Connect Wallet** - Connect your MetaMask wallet to Celo Alfajores
+- 📝 **Grant Authority** - Grant authority with cUSD credit limits
+- 💰 **Issue Micro-Loan** - Issue micro-loans in cUSD
+- 🔍 **Check Authority** - View current authority state
+- ⚠️ **Revoke Authority** - Revoke agent authority
+
+### How to Use the Demo
+
+1. Open the [demo page](https://hardbrick21.github.io/Celo-Authority-Ledger/)
+2. Click "Connect Wallet" and approve the connection
+3. Use the forms to interact with the smart contract
+4. View transaction logs in real-time
+
 ---
 
 *Authority Ledger on Celo - Permission management for the real world.*
